@@ -50,8 +50,6 @@ public class AutoTest {
         System.out.println("max " + auto1.getMerk() + ": " + maxOpvoer1);
         int maxOpvoer2 = auto2.berekenOpvoerMogelijkheid();
         System.out.println("max " + auto2.getMerk() + ": " + maxOpvoer2);
-        
-        int maxOpvoerPks;
         while (auto1.getPk() < auto2.getPk() & auto1.isOpgevoerd()== false) {
             auto1.voerOp(auto1.berekenOpvoerMogelijkheid());
         }
