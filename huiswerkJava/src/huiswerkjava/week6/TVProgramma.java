@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package huiswerkjava;
+package huiswerkjava.week6;
 
 /**
  *
  * @author W10
  */
-public class TVProgramma {
+abstract class TVProgramma {
 
     private String titel;
     private int tijdsduur;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package huiswerkjava;
+package huiswerkjava.week6;
 
 /**
  *
@@ -22,6 +22,6 @@ public class TVSerie extends TVProgramma {
 
     @Override
     public String toString() {
-        return super.toString() + "geregiseerd door:" + regisseur + ", afleveringsnummer: " + afleveringsnummer;
+        return super.toString() + ", geregiseerd door:" + regisseur + ", afleveringsnummer: " + afleveringsnummer;
     }
 }
