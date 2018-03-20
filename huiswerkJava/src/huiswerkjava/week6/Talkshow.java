@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package huiswerkjava;
+package huiswerkjava.week6;
 
 /**
  *
@@ -14,15 +14,13 @@ public class Talkshow extends TVProgramma {
     private String presentator;
     private String onderwerp;
 
-    public Talkshow(String titel, int tijdsduur, String zender, String presentator, String onderwerp) {
+    public Talkshow(String titel, int tijdsduur, String zender) {
         super(titel, tijdsduur, zender);
-        this.presentator = presentator;
-        this.onderwerp = onderwerp;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "wordt gepresenteerd door:" + presentator + ", onderwerp " + onderwerp;
+        return super.toString() + ", wordt gepresenteerd door:" + presentator + ", onderwerp " + onderwerp;
     }
 
 }
