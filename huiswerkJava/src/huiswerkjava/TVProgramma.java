@@ -9,7 +9,7 @@ package huiswerkjava;
  *
  * @author W10
  */
-public class TVProgramma {
+public abstract class TVProgramma {
 
     private String titel;
     private int tijdsduur;
