@@ -19,4 +19,19 @@ public class Knuffelbase {
         lijst = new ArrayList<>();
     }
 
+    public void addKnuffel(Knuffel knuffel) {
+        lijst.add(knuffel);
+    }
+
+    public void printLijst() {
+        System.out.println("*** lijst met knuffels ***");
+        for (Knuffel knuffel : lijst) {
+            System.out.println(knuffel);
+        }
+    }
+
+    public ArrayList<Knuffel> getLijst() {
+        return lijst;
+    }
+
 }
