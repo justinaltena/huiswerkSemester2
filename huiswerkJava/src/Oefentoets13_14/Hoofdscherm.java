@@ -20,32 +20,50 @@ public class Hoofdscherm extends JFrame implements ActionListener {
     private JTextField jtfSchatting;
     private JButton jbProbeer;
     private JButton jbVolgende;
+    private TekenPanel tp;
 
     public Hoofdscherm(Spelronde spelronde) {
-        spelronde = this.spelronde;
+        this.spelronde = spelronde;
         setSize(800, 300);
         setTitle("Knikkers schatten");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
 
-        jtfSchatting = new JTextField(10);
+        jtfSchatting = new JTextField(2);
         add(jtfSchatting);
+
         jbProbeer = new JButton("probeer");
+        jbProbeer.addActionListener(this);
         add(jbProbeer);
+
         jbVolgende = new JButton("volgende ronde");
+        jbVolgende.addActionListener(this);
         add(jbVolgende);
+
+        tp = new TekenPanel(this.spelronde);
+        add(tp);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jbProbeer) {
-            int schatting;
             try {
-                schatting = Integer.parseInt(jtfSchatting.getText());
-                spelronde.setSchatting(schatting);
+                int input = Integer.parseInt(jtfSchatting.getText());
+                spelronde.setSchatting(input);
             } catch (NumberFormatException nfe) {
-                schatting = 0;
+                System.out.println("Invoer moet een getal zijn!");
+            }
+            System.out.println("opgave 3");
+            System.out.println(spelronde);
+        } else {
+            TekenDialoog td = new TekenDialoog(this);
+            td.setVisible(true);
+
+            if (td.getIsMaakaan()) {
+                spelronde = new Spelronde(td.getAantal(), td.getGrootte());
+                tp.setSpelronde(spelronde);
             }
         }
+        repaint();
     }
 }

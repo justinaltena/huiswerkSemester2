@@ -28,13 +28,18 @@ public class FilmScherm extends JFrame implements ActionListener {
         jlScenes = new JLabel("Aantal scenes: " + film.getScenario().getAantalScenes());
         add(jlScenes);
         jbVoegSceneToe = new JButton("Scene toevoegen");
+        jbVoegSceneToe.addActionListener(this);
+        add(jbVoegSceneToe);
         setVisible(true);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == jbVoegSceneToe) {
+            FilmDialoog dialoog = new FilmDialoog(this);
+            dialoog.setVisible(true);
+        }
     }
 
 }

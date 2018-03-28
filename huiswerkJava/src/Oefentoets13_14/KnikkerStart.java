@@ -32,12 +32,9 @@ public class KnikkerStart {
         System.out.println(spelronde1);
 
         System.out.println("opgave 2");
-        Spelronde spelronde = new Spelronde(3, 50);
+        Spelronde spelronde = new Spelronde(7, 50);
         Hoofdscherm scherm = new Hoofdscherm(spelronde);
         scherm.setVisible(true);
-
-        System.out.println("opgave 3");
-        System.out.println(spelronde);
 
     }
 }
